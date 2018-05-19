@@ -47,7 +47,7 @@ class Student
     CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY,
       name TEXT,
-      grade TEXT
+      grade INTEGER
     )
     SQL
 
@@ -58,4 +58,13 @@ class Student
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+
+
+  def self.count_all_students_in_grade_9
+    sql = <<-SQL
+            SELECT COUNT(NAME) FROM students WHERE grade = 9
+             SQL
+    DB[:conn].execute(sql)
+  end
+
 end
