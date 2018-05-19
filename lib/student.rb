@@ -1,12 +1,6 @@
 class Student
   attr_accessor :id, :name, :grade
 
-  @@attributes = {
-    :id => @id,
-    :name => @name,
-    :grade => @grade
-  }
-
   def self.new_from_db(row)
     # create a new Student object given a row from the database
     new_student = self.new
