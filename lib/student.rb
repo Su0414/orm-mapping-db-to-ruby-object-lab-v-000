@@ -1,3 +1,4 @@
+require 'pry' 
 class Student
   attr_accessor :id, :name, :grade
 
@@ -6,7 +7,7 @@ class Student
     new_student = self.new
     new_student.id = row[0]
     new_student.name = row[1]
-    new_student,grade = row[2]
+    new_student.grade = row[2]
     new_student
   end
 
